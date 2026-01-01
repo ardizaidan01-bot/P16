@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan Alert & Dialog Box</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 40px;
+        }
+        h2 {
+            margin-top: 40px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px 0;
+            border: none;
+            border-radius: 6px;
+            background-color: #102fdb;
+            color: rgb(255, 255, 255);
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #102fdb;
+        }
+        #hasil {
+            margin-top: 25px;
+            font-size: 22px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Latihan Tugas Alert dan Dialog Box</h1>
+
+    <!-- ALERT -->
+    <h2>1. Alert Box</h2>
+    <button onclick="tampilAlert()">Tampilkan Alert</button>
+
+    <!-- CONFIRM -->
+    <h2>2. Keluar alert seperti ini (Confirm)</h2>
+    <button onclick="tampilConfirm()">Tampilkan Confirm</button>
+
+    <!-- PROMPT -->
+    <h2>3. Keluar Dialog Box (Prompt)</h2>
+    <button onclick="tampilPrompt()">Tampilkan Prompt</button>
+
+    <!-- HASIL -->
+    <h2>4. Informasi sesuai input</h2>
+    <div id="hasil"></div>
+
+    <script>
+        // 1. ALERT
+        function tampilAlert() {
+            alert("Selamat datang di website interaktif JavaScript!");
+        }
+
+        // 2. CONFIRM
+        function tampilConfirm() {
+            let konfirmasi = confirm("Apakah Anda ingin mengisi data pengguna?");
+            if (konfirmasi) {
+                alert("Silakan klik tombol Prompt untuk mengisi nama.");
+            } else {
+                alert("Anda membatalkan pengisian data.");
+            }
+        }
+
+        // 3. PROMPT
+        function tampilPrompt() {
+            let nama = prompt("Masukkan nama Anda!");
+
+            if (nama === null || nama === "") {
+                document.getElementById("hasil").innerHTML =
+                    "<i>Anda tidak mengisi nama.</i>";
+            } else {
+                document.getElementById("hasil").innerHTML =
+                    `<h2>Interaksi JavaScript</h2>
+                     Halo, <b>${nama}</b>! Terima kasih telah mengisi data.`;
+            }
+        }
+    </script>
+
+</body>
+</html>
